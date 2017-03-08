@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body ng-app="application">
+	<div ng-controller="ApplicationController">
+		<h1 style="font-family: 'Gravitas One', cursive;">Sharath's</h1>
+		<form name="applicationForm">
+
+			<table border=3 width=100%>
+				<tr>
+					<th>UserId
+					<th>Name
+					<th>Description
+					<th>Language
+					<th>PhoneNumber
+				</tr>
+				<tr ng-repeat="application in applications">
+					<td><span ng-bind="application.id"></span></td>
+					<td><span ng-bind="application.name"></span></td>
+					<td><span ng-bind="application.description"></span></td>
+					<td><span ng-bind="application.languagesknown"></span></td>
+					<td><span ng-bind="application.phonenumber"></span></td>
+					<td>
+				</tr>
+			</table>
+			<div class="form-group">
+				<label>User Id</label> <input class=form-control type="text"
+					id="id" ng-model="applicationForm.id" placeholder="Enter id"
+					autocomplete="off">
+			</div>
+
+			<div class="form-group">
+				<label>Name</label> <input class=form-control type="text" id="name"
+					ng-model="applicationForm.name" placeholder="Enter name"
+					autocomplete="off">
+			</div>
+
+			<div class="form-group">
+				<label>Description</label> <input class=form-control type="text"
+					id="description" ng-model="applicationForm.description"
+					placeholder="Enter description" autocomplete="off">
+			</div>
+
+			<div class="form-group">
+				<label>Language You Want to Learn</label> <input class=form-control
+					type="text" id="languagesknow"
+					ng-model="applicationForm.languagesknown"
+					placeholder="Enter languages known" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>Phone Number</label> <input class=form-control type="text"
+					id="phonenumber" ng-model="applicationForm.phonenumber"
+					placeholder="Enter Phone number" autocomplete="off">
+			</div>
+
+
+			<div class="btn-wrapper">
+				<div class="row-gutter-5">
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<button class="btn" type="button"
+							data-ng-click="createapplication()" id="Create">Create</button>
+					</div>
+					<div class="row-gutter-5">
+						<div class="col-md-4 col-xs-6 col-sm-6">
+							<button class="btn" type="button" data-ng-click="refresh()"
+								id="Refresh">Refresh</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>User ID</label> <input class="form-control" type="text"
+					id="id" ng-model="applicationForm.id" placeholder="Enter userId"
+					autocomplete="off">
+			</div>
+			<div class="btn-wrapper">
+				<div class="row-gutter-5">
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<button class="btn " type="button"
+							data-ng-click="deleteapplication()" id="Delete">Delete</button>
+					</div>
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<button class="btn " type="button"
+							data-ng-click="updateapplication()" id="Update">Update</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/angular-resource.min.js"></script>
+	<script src="./js/app.js"></script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet">
+</body>
+</html>
